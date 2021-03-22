@@ -11,7 +11,7 @@
 
 namespace A2lix\TranslationFormBundle\TranslationForm;
 
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Registry;
 use Doctrine\Common\Util\ClassUtils;
 use Symfony\Component\Form\FormRegistry;
 use Symfony\Component\HttpKernel\Kernel;
@@ -28,7 +28,7 @@ class TranslationForm implements TranslationFormInterface
      * @param FormRegistry    $formRegistry
      * @param ManagerRegistry $managerRegistry
      */
-    public function __construct(FormRegistry $formRegistry, ManagerRegistry $managerRegistry)
+    public function __construct(FormRegistry $formRegistry, Registry $managerRegistry)
     {
         $this->typeGuesser = $formRegistry->getTypeGuesser();
         $this->managerRegistry = $managerRegistry;
